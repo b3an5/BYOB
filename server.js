@@ -32,3 +32,39 @@ app.get("/api/v1/people", (request, response) => {
       response.status(500).json({ error });
     });
 });
+
+app.get("/api/v1/heroes/:id", (request, response) => {
+  database("heroes")
+    .where("id", request.params.id)
+    .select()
+    .then(hero => {
+      if (hero.length) {
+        response.status(200).json(hero);
+      } else {
+        response.statusCode(404).json({
+          error: `cound not find paper with id: ${request.params.id}`
+        });
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
+
+app.get("/api/v1/people/:id", (request, response) => {
+  database("people")
+    .where("id", request.params.id)
+    .select()
+    .then(people => {
+      if (people.length) {
+        response.status(200).json(people);
+      } else {
+        response.statusCode(404).json({
+          error: `cound not find paper with id: ${request.params.id}`
+        });
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
+});
