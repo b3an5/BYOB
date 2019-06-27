@@ -3,15 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1",
     "knex": "^0.18.0",
     "pg": "^7.11.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b3an5/BYOB.git"
+  },
+  "bugs": {
+    "url": "https://github.com/b3an5/BYOB/issues"
+  },
+  "homepage": "https://github.com/b3an5/BYOB#readme"
 }
