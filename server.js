@@ -1,8 +1,8 @@
 const express = require("express");
+const configuration = require("./knexfile")[environment];
 const environment = process.env.NODE_ENV || "development";
 const database = require("knex")(configuration);
 const app = express();
-const configuration = require("./knexfile")[environment];
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
