@@ -3,12 +3,12 @@ const configuration = require("./knexfile")[environment];
 const database = require("knex")(configuration);
 const express = require("express");
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`app is running on port: ${port}`);
+app.listen(PORT, () => {
+  console.log(`app is running on port: ${PORT}`);
 });
 
 app.get("/", (request, response) => {
