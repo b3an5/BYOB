@@ -1,7 +1,7 @@
 {
   "name": "super-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.18.0",
