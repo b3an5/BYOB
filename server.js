@@ -12,7 +12,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (request, response) => {
-  response.status(200).json("hello world");
+  response.status(200).send("hello world");
 });
 
 app.get("/api/v1/heroes", (request, response) => {
