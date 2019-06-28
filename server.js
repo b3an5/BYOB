@@ -11,6 +11,10 @@ app.listen(port, () => {
   console.log(`app is running on port: ${port}`);
 });
 
+app.get("/", (request, response) => {
+  response.status(200).json("hello world");
+});
+
 app.get("/api/v1/heroes", (request, response) => {
   database("heroes")
     .select()
@@ -107,4 +111,8 @@ app.post("/api/v1/people", (request, response) => {
         response.status(500).json({ error });
       });
   }
+});
+
+app.delete("/api/v1/heroes/:id", (request, response) => {
+  const id = parseInt(request.params.id);
 });
