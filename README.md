@@ -109,6 +109,6 @@
 ### DELETE '/api/v1/:table/:id'
 * Allows user to delete people or heroes from the database
 #### URL params
-* table names are heroes or people
+* table names are heroes and people
 * corresponding hero or person id 
 * people must be deleted before the hero
