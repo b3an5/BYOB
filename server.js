@@ -113,6 +113,19 @@ app.post("/api/v1/people", (request, response) => {
   }
 });
 
-app.delete("/api/v1/heroes/:id", (request, response) => {
-  const id = parseInt(request.params.id);
+app.delete("/api/v1/:table/:id", (request, result) => {
+  const { table, id } = request.params;
+
+  database(table)
+    .where("id", id)
+    .select()
+    .del()
+    .then(res => {
+      if (!res) {
+        result.status(404).json(`id of ${id} does not exist in table ${table}`);
+      } else {
+        result.status(200).json("Successfully deleted");
+      }
+    })
+    .catch(error => result.status(500).json({ error }));
 });
